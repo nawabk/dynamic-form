@@ -27,6 +27,7 @@ const FormCreateLanding = () => {
       const res = await axios.post(`${BASE_URL}/api/forms`, body);
       setForm(res.data);
       setLoading(false);
+      setShowModal(false);
     } catch (err) {
       setLoading(false);
     }
