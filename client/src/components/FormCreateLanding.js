@@ -52,7 +52,7 @@ const FormCreateLanding = () => {
         </div>
       ) : (
         <div className='container'>
-          <BuildFormLanding form={form} />
+          <BuildFormLanding form={form} setShowModal={setShowModal} />
         </div>
       )}
     </>

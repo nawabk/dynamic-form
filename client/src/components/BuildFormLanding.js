@@ -5,7 +5,7 @@ import NewFieldForm from './NewFieldForm';
 import BuildForm from './BuildForm';
 import { BASE_URL } from '../utils/shared';
 
-const BuildFormLanding = ({ form }) => {
+const BuildFormLanding = ({ form, setShowModal }) => {
   const [fields, setFields] = useState([]);
   const [selectedField, setSelectedField] = useState(null);
 
@@ -21,7 +21,7 @@ const BuildFormLanding = ({ form }) => {
 
   return (
     <div style={{ height: '70vh' }}>
-      <BuildFormHeader form={form} />
+      <BuildFormHeader form={form} setShowModal={setShowModal} />
       <div className='row mt-4'>
         <div
           className='col-md-6'
@@ -47,11 +47,19 @@ const BuildFormLanding = ({ form }) => {
   );
 };
 
-const BuildFormHeader = ({ form }) => {
+const BuildFormHeader = ({ form, setShowModal }) => {
   return (
     <div className='row'>
       <div className='col-md-6'>
         <h4>{form.name}</h4>
+      </div>
+      <div className='col-md-6'>
+        <button
+          className='btn btn-primary btn-sm float-right'
+          onClick={() => setShowModal(true)}
+        >
+          Create New Form
+        </button>
       </div>
     </div>
   );
